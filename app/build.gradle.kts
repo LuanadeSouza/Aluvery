@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.luanadev.aluvery"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.luanadev.aluvery"
