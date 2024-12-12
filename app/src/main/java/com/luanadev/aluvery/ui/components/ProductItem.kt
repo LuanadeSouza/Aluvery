@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.luanadev.aluvery.R
 import com.luanadev.aluvery.extensions.toBrazilianCurrency
 import com.luanadev.aluvery.model.Product

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -18,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.luanadev.aluvery.R
 import com.luanadev.aluvery.extensions.toBrazilianCurrency
 import com.luanadev.aluvery.model.Product
@@ -34,7 +36,7 @@ fun CardProductItem(
         modifier
             .fillMaxWidth()
             .heightIn(150.dp),
-        elevation = elevation
+        elevation = CardDefaults.cardElevation(defaultElevation = elevation)
     ) {
         Column {
             AsyncImage(
