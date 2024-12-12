@@ -1,6 +1,8 @@
 package com.luanadev.aluvery.sampledata
 
 
+import com.luanadev.aluvery.R
+import com.luanadev.aluvery.model.Product
 import java.math.BigDecimal
 
 val sampleProducts = listOf(
