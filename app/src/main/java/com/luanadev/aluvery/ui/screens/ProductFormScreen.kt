@@ -20,6 +20,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -39,10 +40,11 @@ fun ProductFormScreen(
     onSaveClick: () -> Unit = {}
 ) {
     val state by viewModel.uiState.collectAsState()
+    val context = LocalContext.current
     ProductFormScreen(
         state = state,
         onSaveClick = {
-            viewModel.save()
+            viewModel.save(context = context)
             onSaveClick()
         }
     )
@@ -72,7 +74,7 @@ fun ProductFormScreen(
         )
         if (state.isShowPreview) {
             AsyncImage(
-                model = url, contentDescription = null,
+                model = url, contentDescription = "Pré-visualização do produto",
                 Modifier
                     .fillMaxWidth()
                     .height(200.dp),
@@ -99,6 +101,9 @@ fun ProductFormScreen(
             Modifier.fillMaxWidth(),
             label = {
                 Text(text = "Nome")
+            },
+            placeholder = {
+                Text(text = "Exemplo: Pizza Margherita")
             },
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Text,

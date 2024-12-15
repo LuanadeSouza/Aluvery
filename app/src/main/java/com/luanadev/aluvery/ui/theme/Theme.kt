@@ -21,6 +21,19 @@ private val LightColorPalette = lightColorScheme(
     onSecondary = Color.White
 )
 
+// Garante que pessoas com baixa visão possam utilizar o app sem dificuldades.
+
+private val HighContrastPalette = darkColorScheme(
+    primary = Color.Black,
+    secondary = Color.White,
+    background = Color.Black,
+    surface = Color.DarkGray,
+    onPrimary = Color.White,
+    onSecondary = Color.Black,
+    onBackground = Color.White,
+    onSurface = Color.White
+)
+
 @Composable
 fun AluveryTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val colors = if (darkTheme) {

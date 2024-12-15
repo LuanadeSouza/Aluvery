@@ -2,7 +2,7 @@ package com.luanadev.aluvery.extensions
 
 import java.math.BigDecimal
 import java.text.NumberFormat
-import java.util.*
+import java.util.Locale
 
 fun BigDecimal.toBrazilianCurrency(): String {
     return NumberFormat

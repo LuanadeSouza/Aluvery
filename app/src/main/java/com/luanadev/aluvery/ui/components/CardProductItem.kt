@@ -20,10 +20,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.luanadev.aluvery.R
 import com.luanadev.aluvery.extensions.toBrazilianCurrency
@@ -52,7 +55,7 @@ fun CardProductItem(
         Column {
             AsyncImage(
                 model = product.image,
-                contentDescription = null,
+                contentDescription = "Imagem do produto: ${product.name}",
                 Modifier
                     .fillMaxWidth()
                     .height(100.dp),
@@ -66,16 +69,22 @@ fun CardProductItem(
                     .padding(16.dp)
             ) {
                 Text(
-                    text = product.name
+                    text = product.name,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
                 )
                 Text(
-                    text = product.price.toBrazilianCurrency()
+                    text = product.price.toBrazilianCurrency(),
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Normal
                 )
             }
             if (expanded) {
                 product.description?.let {
                     Text(
-                        text = product.description,
+                        text = it,
                         Modifier
                             .padding(16.dp)
                     )

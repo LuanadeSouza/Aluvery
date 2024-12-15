@@ -13,9 +13,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class HomeScreenViewModel : ViewModel() {
-
-    private val dao = ProductDao()
+class HomeScreenViewModel(
+    private val dao: ProductDao = ProductDao()
+) : ViewModel() {
 
     private val _uiState: MutableStateFlow<HomeScreenUiState> = MutableStateFlow(
         HomeScreenUiState()
@@ -64,5 +64,4 @@ class HomeScreenViewModel : ViewModel() {
             sampleProducts.filter(containsInNameOrDescription(text)) +
                     dao.products().value.filter(containsInNameOrDescription(text))
         } else emptyList()
-
 }

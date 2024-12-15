@@ -6,10 +6,12 @@ Este é o projeto **Aluvery**, um aplicativo de estudo desenvolvido em Kotlin co
 
 ## 🚀 Funcionalidades
 
-- **Busca de Produtos**: Permite pesquisar produtos por nome ou descrição.
 - **Tela Principal**: Exibição de seções de produtos categorizados, como "Promoções", "Doces" e "Bebidas".
-- **Itens de Produto**: Layout dinâmico para exibir nome, preço, imagem e descrição de cada produto.
+- **Itens de Produto**: Layout dinâmico para exibir nome, preço, descrição e imagem de cada produto.
+- **Barra de Busca**: Permite filtrar produtos pelo nome ou descrição.
+- **Formulário de Produtos**: Interface para criação de novos produtos com pré-visualização da imagem.
 - **Tema Personalizado**: Utilização de cores personalizadas e suporte a tema claro e escuro.
+- **Feedbacks de Usuário**: Mensagens de sucesso e vibração ao salvar produtos.
 
 ---
 
@@ -18,8 +20,10 @@ Este é o projeto **Aluvery**, um aplicativo de estudo desenvolvido em Kotlin co
 - **Kotlin**: Linguagem principal.
 - **Jetpack Compose**: Framework declarativo para construção de interfaces no Android.
 - **Material Design 3**: Implementação de componentes modernos e acessíveis.
-- **Coil**: Biblioteca para carregamento de imagens assíncronas.
-- **Extensões Kotlin**: Para formatação de moeda em padrão brasileiro.
+- **StateFlow**: Gerenciamento de estados reativos.
+- **Coil**: Biblioteca para carregamento de imagens.
+- **JUnit**: Testes unitários para validação de lógicas.
+- **Mockito**: Mock de dependências para testes.
 
 ---
 
@@ -27,37 +31,40 @@ Este é o projeto **Aluvery**, um aplicativo de estudo desenvolvido em Kotlin co
 
 ### 1. **MainActivity**
 - Ponto de entrada do aplicativo.
-- Configuração do tema e inicialização da tela principal.
+- Configuração do tema, navegação e inicialização das telas principais e formulário de produtos.
 
 ### 2. **HomeScreen**
-- Tela principal que exibe as seções de produtos e a barra de pesquisa.
-- Implementação de scroll vertical e horizontal para navegação entre os produtos.
+- Tela principal que exibe as seções de produtos.
+- Implementação de scroll vertical e barra de busca.
 
 ### 3. **Components**
-- **ProductItem**: Componente individual para exibir informações de um produto com imagem e preço.
-- **CardProductItem**: Componente alternativo para exibir produtos com descrição detalhada.
+- **ProductItem**: Componente individual para exibir informações de um produto.
 - **ProductsSection**: Componente para agrupar itens de uma categoria de produtos.
-- **SearchTextField**: Campo de texto com suporte a busca dinâmica.
+- **SearchTextField**: Campo de busca com suporte a entradas dinâmicas.
 
-### 4. **Model**
+### 4. **Formulário de Produtos**
+- **ProductFormScreen**: Tela para criação de novos produtos com validação e feedbacks visuais.
+- **ProductFormScreenViewModel**: Gerenciamento de estado para o formulário de produtos.
+
+### 5. **DAO e Model**
+- **ProductDao**: Simula um banco de dados em memória com fluxo reativo de produtos.
 - **Product**: Classe representando os dados do produto com nome, preço, imagem e descrição.
 
-### 5. **SampleData**
-- Dados mockados para exibição de produtos, incluindo URLs de imagens e descrições.
+### 6. **SampleData**
+- Dados mockados para exibição inicial de produtos como hambúrguer, pizza e batata frita.
 
-### 6. **Extensions**
+### 7. **Extensions**
 - Método de extensão para formatar preços no padrão brasileiro (exemplo: R$ 12,99).
 
-### 7. **Theme**
-- Configuração de temas claro e escuro com Material Design 3.
-- Definição de cores e formas personalizadas.
+### 8. **Testes Unitários**
+- Cobertura de testes para validação de lógicas nas classes **ProductDao**, **HomeScreenViewModel**, **ProductFormScreenViewModel**, e extensões Kotlin.
 
 ---
 
 ## 🎨 Capturas de Tela
 
 ### Tela Principal
-Exibição de seções de produtos com scroll vertical e horizontal.
+Exibição de seções de produtos com scroll vertical.
 
 <img src="https://github.com/user-attachments/assets/67ff3425-e5e2-4d9e-9f66-c806038c235f" alt="Screenshot_20241212_191925" width="300">         
 
@@ -84,20 +91,20 @@ Exibição de seções de produtos com scroll vertical e horizontal.
 ## 📚 Aprendizados
 
 - Construção de layouts com **Jetpack Compose**.
-- Gerenciamento de estados com `remember` e `mutableStateOf`.
+- Gerenciamento de estados com `StateFlow` e `ViewModel`.
 - Criação de componentes reutilizáveis com boas práticas de composição.
 - Implementação de temas utilizando **MaterialTheme**.
-- Utilização de bibliotecas para carregamento de imagens como **Coil**.
-- Filtragem dinâmica de listas com base em entradas do usuário.
+- Integração de bibliotecas para carregamento de imagens.
+- Escrita de testes unitários para validação de lógicas e fluxos de dados.
 
 ---
 
 ## 🔮 Melhorias Futuras
 
 - Integração com uma API para obter produtos dinamicamente.
-- Adicionar navegação entre telas.
+- Adicionar navegação entre telas para detalhes de produtos.
 - Implementar funcionalidade de carrinho de compras.
-- Melhorar a acessibilidade do aplicativo.
+- Criar um banco de dados local persistente com Room.
 
 ---
 
