@@ -66,9 +66,11 @@ Este é o projeto **Aluvery**, um aplicativo de estudo desenvolvido em Kotlin co
 ### Tela Principal
 Exibição de seções de produtos com scroll vertical.
 
-<img src="https://github.com/user-attachments/assets/67ff3425-e5e2-4d9e-9f66-c806038c235f" alt="Screenshot_20241212_191925" width="300">         
+<img src="https://github.com/user-attachments/assets/e2ee134c-f1f7-4dac-b760-935a7131d319" alt="Screenshot_20241215_153733" width="300">
 
-<img src="https://github.com/user-attachments/assets/2fd20d4b-7fea-4887-90fb-686278477ff6" alt="Screenshot_20241212_191957" width="300">
+<img src="https://github.com/user-attachments/assets/fe6f6576-5347-4534-8595-e1cdf229b9e1" alt="Screenshot_20241215_153720" width="300">
+
+<img src="https://github.com/user-attachments/assets/ffc71392-ac6b-4ede-a398-5ba864e5d987" alt="Screenshot_20241212_202858" width="300">
 
 ---
 
